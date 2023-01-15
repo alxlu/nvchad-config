@@ -9,9 +9,13 @@ local b = null_ls.builtins
 local sources = {
 
   -- webdev stuff
-  b.formatting.deno_fmt,
+  -- b.formatting.deno_fmt,
   -- b.formatting.prettier,
-  b.formatting.prettier.with { filetypes = { "typescript", "html", "markdown", "css" } },
+  b.formatting.prettier.with {
+    prefer = "node_modules/.bin",
+    -- command = "node_modules/.bin/prettier",
+    -- filetypes = { "typescript", "html", "markdown", "css", "tsserver" }
+  },
 
   -- Lua
   b.formatting.stylua,
