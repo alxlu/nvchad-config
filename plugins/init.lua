@@ -49,4 +49,17 @@ return {
   },
   ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
   ["williamboman/mason.nvim"] = { override_options = overrides.mason },
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = function()
+      local cmp = require "cmp"
+      return {
+        mapping = {
+          ["<Up>"] = cmp.mapping.select_prev_item(),
+          ["<Down>"] = cmp.mapping.select_next_item(),
+          ["<C-k>"] = cmp.mapping.select_prev_item(),
+          ["<C-j>"] = cmp.mapping.select_next_item(),
+        },
+      }
+    end,
+  },
 }
