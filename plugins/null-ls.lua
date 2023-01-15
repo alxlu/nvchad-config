@@ -26,6 +26,13 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- go
+  b.formatting.gofumpt,
+
+  -- python
+  b.formatting.black,
+  b.diagnostics.pylint
 }
 
 null_ls.setup {

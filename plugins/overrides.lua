@@ -67,6 +67,7 @@ M.mason = {
     -- python
     "pyright",
     "pylint",
+    "black",
   },
 }
 
