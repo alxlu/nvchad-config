@@ -63,6 +63,10 @@ M.mason = {
     -- go
     "gofumpt",
     "gopls",
+
+    -- python
+    "pyright",
+    "pylint",
   },
 }
 
