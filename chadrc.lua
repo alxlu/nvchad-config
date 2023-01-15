@@ -3,7 +3,8 @@
 local M = {}
 
 M.ui = {
-  theme = "ayu-dark",
+  theme = "blossom",
+  theme_toggle = { "tomorrow_night", "blossom" },
 }
 
 M.plugins = require "custom.plugins"
