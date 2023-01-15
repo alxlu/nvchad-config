@@ -47,7 +47,6 @@ return {
       require("nvim-treesitter.configs").setup()
     end,
   },
-    ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
-    ["williamboman/mason.nvim"] = { override_options = overrides.mason },
-
+  ["nvim-treesitter/nvim-treesitter"] = { override_options = overrides.treesitter },
+  ["williamboman/mason.nvim"] = { override_options = overrides.mason },
 }
