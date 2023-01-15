@@ -3,6 +3,7 @@ local overrides = require "custom.plugins.overrides"
 return {
   ["github/copilot.vim"] = {},
   ["tpope/vim-fugitive"] = {},
+  ["tpope/vim-surround"] = {},
   ["neovim/nvim-lspconfig"] = {
     config = function()
       require "plugins.configs.lspconfig"
