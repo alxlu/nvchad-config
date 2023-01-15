@@ -12,10 +12,15 @@ local sources = {
   -- b.formatting.deno_fmt,
   -- b.formatting.prettier,
   b.formatting.prettier.with {
-    prefer = "node_modules/.bin",
+    prefer_local = "node_modules/.bin",
     -- command = "node_modules/.bin/prettier",
     -- filetypes = { "typescript", "html", "markdown", "css", "tsserver" }
   },
+  -- b.diagnostics.eslint.with {
+  --   prefer_local = "node_modules/.bin",
+  -- },
+  b.code_actions.eslint,
+  b.diagnostics.eslint,
 
   -- Lua
   b.formatting.stylua,
@@ -32,11 +37,10 @@ local sources = {
 
   -- python
   b.formatting.black,
-  b.diagnostics.pylint
+  b.diagnostics.pylint,
 }
 
 null_ls.setup {
   debug = true,
   sources = sources,
 }
-
