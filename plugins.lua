@@ -38,6 +38,18 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
+  {
+    "hrsh7th/nvim-cmp",
+    opts = function()
+      local opts = require("plugins.configs.cmp")
+      local cmp = require("cmp")
+      opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
+      opts.mapping["<C-k>"] = cmp.mapping.select_prev_item()
+      return opts
+    end
+  },
+
+
   -- Install a plugin
   {
     "max397574/better-escape.nvim",

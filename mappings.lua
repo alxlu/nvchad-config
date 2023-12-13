@@ -1,6 +1,15 @@
 ---@type MappingsTable
 local M = {}
 
+M.disabled = {
+  i = {
+    ["<C-h>"] = nil,
+    ["<C-l>"] = nil,
+    ["<C-j>"] = nil,
+    ["<C-k>"] = nil,
+  },
+}
+
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
