@@ -7,12 +7,14 @@ M.disabled = {
     ["<C-l>"] = "",
     ["<C-j>"] = "",
     ["<C-k>"] = "",
-    ["<Down>"] = "",
-    ["<Up>"] = "",
   },
 }
 
 M.general = {
+  i = {
+    ["<Up>"] = { "<Nop>", "noop" },
+    ["<Down>"] = { "<Nop>", "noop" },
+  },
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["QQ"] = { "<cmd> quitall! <CR>", "quit all without save" },

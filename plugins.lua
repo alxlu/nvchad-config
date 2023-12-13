@@ -45,6 +45,8 @@ local plugins = {
       local cmp = require("cmp")
       opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
       opts.mapping["<C-k>"] = cmp.mapping.select_prev_item()
+      opts.mapping["<Down>"] = cmp.mapping.select_next_item()
+      opts.mapping["<Up>"] = cmp.mapping.select_prev_item()
       return opts
     end
   },
