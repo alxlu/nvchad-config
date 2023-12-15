@@ -41,16 +41,15 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = function()
-      local opts = require("plugins.configs.cmp")
-      local cmp = require("cmp")
+      local opts = require "plugins.configs.cmp"
+      local cmp = require "cmp"
       opts.mapping["<C-j>"] = cmp.mapping.select_next_item()
       opts.mapping["<C-k>"] = cmp.mapping.select_prev_item()
       opts.mapping["<Down>"] = cmp.mapping.select_next_item()
       opts.mapping["<Up>"] = cmp.mapping.select_prev_item()
       return opts
-    end
+    end,
   },
-
 
   -- Install a plugin
   {
@@ -88,6 +87,38 @@ local plugins = {
       -- (context property is optional).
       list_models = "<function>", -- Retrieves a list of model names
       debug = false, -- Prints errors and the command which is run.
+    },
+  },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen" },
+  },
+  {
+    "jinh0/eyeliner.nvim",
+    config = function()
+      require("eyeliner").setup {
+        highlight_on_key = true,
+        dim = true,
+      }
+    end,
+    lazy = false,
+  },
+  {
+    "ThePrimagen/harpoon",
+    config = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>;", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
+      { "<leader>mj", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Go to next harpoon mark" },
+      { "<leader>mk", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Go to previous harpoon mark" },
+      { "<leader>mb", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
+      { "<leader>:", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
+      { "<leader>h", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", desc = "harpoon 1" },
+      { "<leader>j", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", desc = "harpoon 2" },
+      { "<leader>k", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", desc = "harpoon 3" },
+      { "<leader>l", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "harpoon 4" },
     },
   },
 

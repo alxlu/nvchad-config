@@ -8,6 +8,11 @@ M.disabled = {
     ["<C-j>"] = "",
     ["<C-k>"] = "",
   },
+  n = {
+    ["<leader>ls"] = "",
+    ["<leader>lf"] = "",
+    ["<leader>h"] = "",
+  }
 }
 
 M.general = {
@@ -16,15 +21,22 @@ M.general = {
     ["<Down>"] = { "<Nop>", "noop" },
   },
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    -- [";"] = { ":", "enter command mode", opts = { nowait = true } },
     ["QQ"] = { "<cmd> quitall! <CR>", "quit all without save" },
-    ["WW"] = { "<cmd> quit <CR>", "quit all without save" },
+    ["WW"] = { "<cmd> quit <CR>", "quit window without save" },
+    ["gs"] = { "<cmd> G <CR>", "vim fugitive git status"},
+    ["<leader>K"] = {
+      function()
+        vim.diagnostic.open_float { border = "rounded" }
+      end,
+      "lsp floating diagnostic",
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
-    [";"] = { ":", "command mode", opts = { nowait = true } },
+    -- [";"] = { ":", "command mode", opts = { nowait = true } },
     ["QQ"] = { "<cmd> quitall! <CR>", "quit all without save" },
-    ["WW"] = { "<cmd> quit <CR>", "quit all without save" },
+    ["WW"] = { "<cmd> quit <CR>", "quit window without save" },
   },
 }
 
