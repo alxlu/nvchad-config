@@ -121,6 +121,14 @@ local plugins = {
       { "<leader>l", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", desc = "harpoon 4" },
     },
   },
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    cmd = {"Oil"},
+    config = function()
+      require("oil").setup {}
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
