@@ -124,9 +124,14 @@ local plugins = {
   {
     "stevearc/oil.nvim",
     opts = {},
-    cmd = {"Oil"},
+    cmd = { "Oil" },
+    lazy = false,
     config = function()
-      require("oil").setup {}
+      require("oil").setup {
+        keymaps = {
+          ["g;"] = "actions.open_terminal",
+        },
+      }
     end,
   },
 
