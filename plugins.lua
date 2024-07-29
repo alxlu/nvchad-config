@@ -129,7 +129,10 @@ local plugins = {
     config = function()
       require("oil").setup {
         keymaps = {
+          ["<C-h>"] = false,
+          ["<C-l>"] = false,
           ["g;"] = "actions.open_terminal",
+          ["gs"] = false,
         },
       }
     end,
